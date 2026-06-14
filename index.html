@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Command Guide | Командний Спринт</title>
+    <style>
+        :root {
+            --bg-color: #0f0c1b;
+            --card-bg: #1a152e;
+            --text-color: #f5f0f6;
+            --accent-pink: #ff4a85;
+            --accent-purple: #9d4edd;
+            --code-bg: #241e3f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px dashed var(--accent-pink);
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--accent-pink);
+            text-shadow: 0 0 10px rgba(255, 74, 133, 0.3);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #a09abc;
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 74, 133, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform 0.2s, border-color 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-pink);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--accent-purple);
+            border-left: 3px solid var(--accent-pink);
+            padding-left: 10px;
+        }
+
+        .cmd-list {
+            list-style: none;
+        }
+
+        .cmd-list li {
+            margin-bottom: 12px;
+        }
+
+        .cmd-list p {
+            font-size: 0.9rem;
+            color: #b5b0cd;
+            margin-bottom: 4px;
+        }
+
+        code {
+            display: block;
+            background-color: var(--code-bg);
+            color: var(--accent-pink);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border: 1px solid rgba(255, 74, 133, 0.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            color: #6a638d;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 74, 133, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Довідник команд Git</h1>
+            <p>Практична робота: Симуляція реального ІТ-проєкту</p>
+        </header>
+
+        <main class="grid">
+            <section class="card">
+                <h2>Локальна робота</h2>
+                <ul class="cmd-list">
+                    <li>
+                        <p>Ініціалізація репозиторію:</p>
+                        <code>git init</code>
+                    </li>
+                    <li>
+                        <p>Перевірка статусу файлів:</p>
+                        <code>git status</code>
+                    </li>
+                    <li>
+                        <p>Додавання файлів до індексу:</p>
+                        <code>git add .</code>
+                    </li>
+                    <li>
+                        <p>Фіксація змін (комміт):</p>
+                        <code>git commit -m "опис"</code>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Робота з гілками</h2>
+                <ul class="cmd-list">
+                    <li>
+                        <p>Створення нової гілки:</p>
+                        <code>git branch name</code>
+                    </li>
+                    <li>
+                        <p>Перехід на іншу гілку:</p>
+                        <code>git checkout name</code>
+                    </li>
+                    <li>
+                        <p>Створення та перехід:</p>
+                        <code>git checkout -b name</code>
+                    </li>
+                    <li>
+                        <p>Злиття гілок:</p>
+                        <code>git merge name</code>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Робота з GitHub</h2>
+                <ul class="cmd-list">
+                    <li>
+                        <p>Клонування репозиторію:</p>
+                        <code>git clone URL</code>
+                    </li>
+                    <li>
+                        <p>Прив'язка віддаленого резу:</p>
+                        <code>git remote add origin</code>
+                    </li>
+                    <li>
+                        <p>Завантаження змін з сервера:</p>
+                        <code>git pull origin main</code>
+                    </li>
+                    <li>
+                        <p>Відправка змін на сервер:</p>
+                        <code>git push origin main</code>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Веб-студія розробки. Зроблено з 💖 для Командного Спринту.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
